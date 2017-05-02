@@ -12,9 +12,10 @@ all: builder-image build run
 builder-image:
 	docker build -t $(BUILDER_IMAGE) builder
 
-# TODO need to quit using hard-coded path here, not very useful for anyone else
+# Turn on debugging for s2i build (if you're having problems)
+#   --loglevel=5
 build:
-	s2i build $(REPO_LOCATION) $(BUILDER_IMAGE) $(IMAGE_NAME) --runtime-image jboss/wildfly:10.0.0.Final --runtime-artifact $(ARTIFACT_LOCATION) --scripts-url file:///home/jcain/code/jaxrs-hello/.s2i/bin --loglevel=5
+	s2i build $(REPO_LOCATION) --ref=s2i $(BUILDER_IMAGE) $(IMAGE_NAME) --runtime-image jboss/wildfly:10.0.0.Final --runtime-artifact $(ARTIFACT_LOCATION)
 
 # TODO get this log level lower, allow parameters
 # TODO figure out how to expose ports automatically instead of doing theme here ^
