@@ -14,7 +14,7 @@ builder-image:
 
 # TODO need to quit using hard-coded path here, not very useful for anyone else
 build:
-	s2i build $(REPO_LOCATION) $(BUILDER_IMAGE) $(IMAGE_NAME) --runtime-image jboss/wildfly:10.0.0.Final --runtime-artifact $(ARTIFACT_LOCATION) --scripts-url file:///home/jcain/code/jaxrs-hello/s2i/bin --loglevel=5
+	s2i build $(REPO_LOCATION) $(BUILDER_IMAGE) $(IMAGE_NAME) --runtime-image jboss/wildfly:10.0.0.Final --runtime-artifact $(ARTIFACT_LOCATION) --scripts-url file:///home/jcain/code/jaxrs-hello/.s2i/bin --loglevel=5
 
 # TODO get this log level lower, allow parameters
 # TODO figure out how to expose ports automatically instead of doing theme here ^
