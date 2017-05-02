@@ -6,7 +6,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import java.util.Optional;
 
-@Path("hello")
+@Path("/")
 public class HelloResource {
 
     @GET

@@ -5,7 +5,7 @@
     <groupId>io.reformanda.semper</groupId>
     <artifactId>jaxrs-hello</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>jaxrs-hello</name>
 
@@ -43,4 +43,15 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.2.0.Alpha4</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
