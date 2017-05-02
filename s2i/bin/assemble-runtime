@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+echo "Assembling runtime!"
+cp -v jaxrs-hello.war wildfly/standalone/deployments
